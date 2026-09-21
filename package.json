@@ -1,0 +1,11 @@
+{
+  "name": "webgl-3d-scatter",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "手写 WebGL 3D 散点图：GPU 拾取、轨迹球旋转、Web Worker 数据管线、Canvas 2D 降级",
+  "scripts": {
+    "test": "node test/unit.mjs && node test/worker-test.mjs && node test/integration.mjs",
+    "serve": "python3 -m http.server 8080"
+  }
+}

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>手写 WebGL 3D 散点图 · 旋转 / 拾取 / 降级</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div id="app">
+  <aside id="panel">
+    <h1>3D 散点图</h1>
+    <p class="sub">手写 WebGL · Web Worker · Canvas 2D 降级</p>
+
+    <div class="group">
+      <label for="countInput">点数（100 – 2,000,000）</label>
+      <div class="row">
+        <input id="countInput" type="number" min="100" max="2000000" step="1000" value="50000">
+        <button id="reloadBtn">生成</button>
+      </div>
+      <button id="resetBtn" class="ghost">重置视角（或双击画布）</button>
+    </div>
+
+    <div class="group stats">
+      <div><span>后端</span><b id="backend">初始化中…</b></div>
+      <div><span>点数</span><b id="pointCount">—</b></div>
+      <div><span>FPS</span><b id="fps">—</b></div>
+      <div><span>悬停</span><b id="hovered">—</b></div>
+      <div><span>选中</span><b id="selected">—</b></div>
+      <div><span>拾取</span><b id="pickMode">GPU 编码 / CPU 射线降级</b></div>
+    </div>
+
+    <div class="group">
+      <h2>操作</h2>
+      <ul>
+        <li>拖拽：轨迹球旋转（松手有惯性）</li>
+        <li>滚轮 / 双指：缩放</li>
+        <li>悬停：GPU 拾取显示坐标</li>
+        <li>单击：选中高亮（白色放大）</li>
+        <li>双击：重置视角</li>
+      </ul>
+    </div>
+
+    <div id="status" class="status">初始化中…</div>
+  </aside>
+
+  <main id="stage">
+    <canvas id="glCanvas"></canvas>
+    <div id="banner"></div>
+    <div id="tooltip" class="tooltip"></div>
+  </main>
+</div>
+<script src="src/data.js"></script>
+<script type="module" src="src/main.js"></script>
+</body>
+</html>
