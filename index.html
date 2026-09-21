@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title>WebGL 3D 散点图</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="app">
+  <canvas id="view"></canvas>
+  <div id="hud">
+    <div id="stats">初始化中…</div>
+    <div id="hint">拖拽旋转 · 滚轮/双指缩放 · 点击拾取</div>
+  </div>
+  <div id="tooltip" hidden></div>
+  <div id="fatal" hidden>
+    <div>
+      <h2>无法初始化图形环境</h2>
+      <p id="fatal-msg"></p>
+    </div>
+  </div>
+</div>
+<script src="js/mat4.js"></script>
+<script src="js/renderer.js"></script>
+<script src="js/fallback2d.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
